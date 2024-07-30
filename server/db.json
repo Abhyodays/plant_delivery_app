@@ -1,0 +1,471 @@
+{
+  "users": [
+    {
+      "name": "User 2",
+      "username": "user2@example.com",
+      "id": "2"
+    },
+    {
+      "name": "User 3",
+      "username": "user3@example.com",
+      "id": "3"
+    }
+  ],
+  "plants": [
+    {
+      "id": "1",
+      "name": "African Mask",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+      "price": "$45",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "1 ft",
+      "potType": "Ceramic",
+      "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+    },
+    {
+      "id": "2",
+      "name": "Bird's Nest",
+      "image_url": "url_to_birds_nest_image",
+      "price": "$35",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "8 inches",
+      "potType": "Plastic",
+      "description": "The Bird's Nest Fern, or Asplenium nidus, features glossy, wavy fronds that form a rosette shape. It prefers indirect light and a humid environment. Its unique form resembles a bird's nest, adding a touch of greenery to any space."
+    },
+    {
+      "id": "3",
+      "name": "Faux Watermelon",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331321/faux-watermelon-peperomia-plant-terracotta-pot-home-decor-removebg-preview_xgzd6b.png",
+      "price": "$20",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "1 ft",
+      "potType": "Terracotta",
+      "description": "The Faux Watermelon Plant is a vibrant decorative piece featuring leaves that mimic the appearance of a watermelon rind. It’s perfect for adding a playful touch to interiors without the care requirements of real plants."
+    },
+    {
+      "id": "4",
+      "name": "Peace Lily",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331324/peace-lily-plant-terracotta-pot-home-decor-object-removebg-preview_upyq87.png",
+      "price": "$30",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "7 inches",
+      "potType": "Terracotta",
+      "description": "The Peace Lily, or Spathiphyllum, is known for its elegant white blooms and dark green leaves. It thrives in low to moderate light and is famous for its air-purifying qualities. It’s an easy-to-care-for plant that adds serenity to any room."
+    },
+    {
+      "id": "5",
+      "name": "Pepper Face",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331326/pepper-face-plant-small-pot-removebg-preview_nyhzev.png",
+      "price": "$30",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "6 inches",
+      "potType": "Ceramic",
+      "description": "The Pepper Face Plant, or Peperomia, features thick, fleshy leaves that can be green, red, or variegated. It’s a compact plant that thrives in bright, indirect light. It’s known for its ease of care and attractive foliage."
+    },
+    {
+      "id": "6",
+      "name": "Polkadot Begonia",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331332/polkadot-begonia-plant-terracotta-pot-home-decor-object-removebg-preview_libzd9.png",
+      "price": "$25",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "5 inches",
+      "potType": "Terracotta",
+      "description": "The Polkadot Begonia, or Begonia maculata, features striking silver spots on its dark green leaves. This plant thrives in bright, indirect light and needs regular watering. It’s prized for its unique appearance and vibrant foliage."
+    },
+    {
+      "id": "7",
+      "name": "Alocasia",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/alocasia-popular-houseplant-removebg-preview_fl8znr.png",
+      "price": "$50",
+      "type": "Houseplant",
+      "height": "3 ft",
+      "potSize": "8 inches",
+      "potType": "Ceramic",
+      "description": "Alocasia plants, such as Alocasia Polly, are known for their striking, arrow-shaped leaves with bold veins. They thrive in bright, indirect light and high humidity. Their dramatic foliage adds a touch of the tropics to any room."
+    },
+    {
+      "id": "8",
+      "name": "Snake Plant",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331334/snake-plant-beige-pot-by-wall-removebg-preview_dqqwcj.png",
+      "price": "$25",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "7 inches",
+      "potType": "Ceramic",
+      "description": "The Snake Plant, or Sansevieria, is known for its upright, sword-like leaves and tolerance to low light and neglect. It’s an excellent choice for beginners and is also effective at purifying indoor air."
+    },
+    {
+      "id": "9",
+      "name": "Kentia Palm",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331324/kentia_palm_jxtdjb.jpg",
+      "price": "$60",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "10 inches",
+      "potType": "Ceramic",
+      "description": "The Kentia Palm, or Howea forsteriana, is a tall, elegant palm with feathery, arching fronds. It thrives in low to bright, indirect light and is an ideal plant for adding a touch of the tropics to any room."
+    },
+    {
+      "id": "10",
+      "name": "Dracaena Fragrans",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331317/Dracaena_Fragrans_dds42w.png",
+      "price": "$40",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "8 inches",
+      "potType": "Terracotta",
+      "description": "Dracaena Fragrans, also known as Corn Plant, has large, glossy leaves with a striking appearance. It is low-maintenance, adapting well to low light conditions and infrequent watering. It’s perfect for adding height and elegance to your interior."
+    },
+    {
+      "id": "11",
+      "name": "Swiss Cheese",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331324/monstera-deliciosa-plant-pot-removebg-preview_ntnakf.png",
+      "price": "$35",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "7 inches",
+      "potType": "Ceramic",
+      "description": "The Swiss Cheese Plant, or Monstera deliciosa, is known for its large, fenestrated leaves that resemble Swiss cheese. It thrives in bright, indirect light and adds a bold, tropical touch to your space."
+    },
+    {
+      "id": "12",
+      "name": "Zuzu Zanzibar Gem",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331335/zz-plant-gray-pot-removebg-preview_ygik9g.png",
+      "price": "$30",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "6 inches",
+      "potType": "Ceramic",
+      "description": "The Zuzu Zanzibar Gem, or ZZ Plant, features glossy, dark green leaves that are drought-tolerant and low-maintenance. It thrives in low to bright, indirect light and is perfect for beginners or busy individuals."
+    },
+    {
+      "id": "13",
+      "name": "Calathea Medallion",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331314/calathea-medallion-plant-white-pot-removebg-preview_gokxbz.png",
+      "price": "$40",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "7 inches",
+      "potType": "Ceramic",
+      "description": "The Calathea Medallion is known for its striking, round leaves with intricate patterns. It prefers bright, indirect light and high humidity. This plant is perfect for adding a touch of elegance and pattern to your decor."
+    },
+    {
+      "id": "14",
+      "name": "Calathea Orbifolia",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331315/calathea-orbifolia-plant-terracotta-pot-home-decor-object-removebg-preview_sni2gt.png",
+      "price": "$45",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "7 inches",
+      "potType": "Terracotta",
+      "description": "The Calathea Orbifolia is admired for its large, round leaves with bold stripes. It thrives in low to bright, indirect light and requires high humidity. Its unique foliage adds a dramatic flair to any room."
+    },
+    {
+      "id": "15",
+      "name": "Calathea",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331314/calathea-plant-gray-pot-removebg-preview_c5nbpb.png",
+      "price": "$35",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "8 inches",
+      "potType": "Ceramic",
+      "description": "Calathea plants are known for their stunning foliage with intricate patterns and vibrant colors. They prefer indirect light and high humidity. Perfect for adding a touch of sophistication to indoor spaces."
+    },
+    {
+      "id": "16",
+      "name": "Monstera Deliciosa",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331335/swiss_cheese_yhudbz.png",
+      "price": "$50",
+      "type": "Indoor",
+      "height": "4 ft",
+      "potSize": "10 inches",
+      "potType": "Ceramic",
+      "description": "Monstera Deliciosa, commonly known as the Swiss Cheese Plant, features large, glossy leaves with unique splits and holes. It thrives in bright, indirect light and adds a dramatic, tropical element to any decor."
+    },
+    {
+      "id": "17",
+      "name": "Pin Stripe Calathea",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331332/pinstripe_calathea_dbxmsg.png",
+      "price": "$40",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "6 inches",
+      "potType": "Terracotta",
+      "description": "The Pin Stripe Calathea features distinctive pinstripe patterns on its leaves, creating a striking appearance. It thrives in bright, indirect light and needs high humidity. This plant adds a unique touch to indoor gardens."
+    },
+    {
+      "id": "18",
+      "name": "Sansevieria Cylindrica",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331333/sanseviera_cylindrica_olvihg.png",
+      "price": "$70",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "10 inches",
+      "potType": "Brass",
+      "description": "Sansevieria Cylindrica, also known as the Cylindrical Snake Plant, features tall, cylindrical leaves that add a modern touch to interiors. It is very low-maintenance and adaptable to various light conditions."
+    },
+    {
+      "id": "19",
+      "name": "Rubber Plant",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331333/rubber-plant-black-pot-removebg-preview_zexpbl.png",
+      "price": "$40",
+      "type": "Indoor",
+      "height": "4 ft",
+      "potSize": "10 inches",
+      "potType": "Plastic",
+      "description": "The Rubber Plant, or Ficus elastica, features large, glossy leaves that add a touch of elegance to any space. It prefers bright, indirect light and can tolerate low light conditions. It’s known for its robust nature and air-purifying qualities."
+    },
+    {
+      "id": "20",
+      "name": "fiddle leaf fig",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331322/fiddle-leaf-fig_xie0kn.png",
+      "height": "2ft.",
+      "potSize": "6 Inches",
+      "potType": "Ceramic",
+      "price": "$ 23.00",
+      "type": "Indoor",
+      "description": "The fiddle leaf fig is a striking indoor plant known for its large, glossy, violin-shaped leaves. It adds a touch of tropical elegance and can grow up to 10 feet tall indoors with proper care."
+    },
+    {
+      "id": "21",
+      "name": "Peace Lily",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331325/peace-lily-plant-white-pot-removebg-preview_mjmlt8.png",
+      "price": "$30",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "7 inches",
+      "potType": "Ceramic",
+      "description": "The Peace Lily, or Spathiphyllum, is known for its elegant white blooms and dark green leaves. It thrives in low to moderate light and is famous for its air-purifying qualities. It’s an easy-to-care-for plant that adds serenity to any room."
+    }
+  ],
+  "popular-plants": [
+    {
+      "id": "1",
+      "name": "African Mask",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+      "price": "$45",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "1 ft",
+      "potType": "Ceramic",
+      "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+    },
+    {
+      "id": "2",
+      "name": "Bird's Nest",
+      "image_url": "url_to_birds_nest_image",
+      "price": "$35",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "8 inches",
+      "potType": "Plastic",
+      "description": "The Bird's Nest Fern, or Asplenium nidus, features glossy, wavy fronds that form a rosette shape. It prefers indirect light and a humid environment. Its unique form resembles a bird's nest, adding a touch of greenery to any space."
+    },
+    {
+      "id": "3",
+      "name": "Faux Watermelon",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331321/faux-watermelon-peperomia-plant-terracotta-pot-home-decor-removebg-preview_xgzd6b.png",
+      "price": "$20",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "1 ft",
+      "potType": "Terracotta",
+      "description": "The Faux Watermelon Plant is a vibrant decorative piece featuring leaves that mimic the appearance of a watermelon rind. It’s perfect for adding a playful touch to interiors without the care requirements of real plants."
+    },
+    {
+      "id": "4",
+      "name": "Peace Lily",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331324/peace-lily-plant-terracotta-pot-home-decor-object-removebg-preview_upyq87.png",
+      "price": "$30",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "7 inches",
+      "potType": "Terracotta",
+      "description": "The Peace Lily, or Spathiphyllum, is known for its elegant white blooms and dark green leaves. It thrives in low to moderate light and is famous for its air-purifying qualities. It’s an easy-to-care-for plant that adds serenity to any room."
+    },
+    {
+      "id": "5",
+      "name": "Pepper Face",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331326/pepper-face-plant-small-pot-removebg-preview_nyhzev.png",
+      "price": "$30",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "6 inches",
+      "potType": "Ceramic",
+      "description": "The Pepper Face Plant, or Peperomia, features thick, fleshy leaves that can be green, red, or variegated. It’s a compact plant that thrives in bright, indirect light. It’s known for its ease of care and attractive foliage."
+    },
+    {
+      "id": "6",
+      "name": "Polkadot Begonia",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331332/polkadot-begonia-plant-terracotta-pot-home-decor-object-removebg-preview_libzd9.png",
+      "price": "$25",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "5 inches",
+      "potType": "Terracotta",
+      "description": "The Polkadot Begonia, or Begonia maculata, features striking silver spots on its dark green leaves. This plant thrives in bright, indirect light and needs regular watering. It’s prized for its unique appearance and vibrant foliage."
+    },
+    {
+      "id": "7",
+      "name": "Alocasia",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/alocasia-popular-houseplant-removebg-preview_fl8znr.png",
+      "price": "$50",
+      "type": "Houseplant",
+      "height": "3 ft",
+      "potSize": "8 inches",
+      "potType": "Ceramic",
+      "description": "Alocasia plants, such as Alocasia Polly, are known for their striking, arrow-shaped leaves with bold veins. They thrive in bright, indirect light and high humidity. Their dramatic foliage adds a touch of the tropics to any room."
+    },
+    {
+      "id": "8",
+      "name": "Snake Plant",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331334/snake-plant-beige-pot-by-wall-removebg-preview_dqqwcj.png",
+      "price": "$25",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "7 inches",
+      "potType": "Ceramic",
+      "description": "The Snake Plant, or Sansevieria, is known for its upright, sword-like leaves and tolerance to low light and neglect. It’s an excellent choice for beginners and is also effective at purifying indoor air."
+    },
+    {
+      "id": "9",
+      "name": "Kentia Palm",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331324/kentia_palm_jxtdjb.jpg",
+      "price": "$60",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "10 inches",
+      "potType": "Ceramic",
+      "description": "The Kentia Palm, or Howea forsteriana, is a tall, elegant palm with feathery, arching fronds. It thrives in low to bright, indirect light and is an ideal plant for adding a touch of the tropics to any room."
+    }
+  ],
+  "new-arrivals": [
+    {
+      "id": "11",
+      "name": "Swiss Cheese",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331324/monstera-deliciosa-plant-pot-removebg-preview_ntnakf.png",
+      "price": "$35",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "7 inches",
+      "potType": "Ceramic",
+      "description": "The Swiss Cheese Plant, or Monstera deliciosa, is known for its large, fenestrated leaves that resemble Swiss cheese. It thrives in bright, indirect light and adds a bold, tropical touch to your space."
+    },
+    {
+      "id": "12",
+      "name": "Zuzu Zanzibar Gem",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331335/zz-plant-gray-pot-removebg-preview_ygik9g.png",
+      "price": "$30",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "6 inches",
+      "potType": "Ceramic",
+      "description": "The Zuzu Zanzibar Gem, or ZZ Plant, features glossy, dark green leaves that are drought-tolerant and low-maintenance. It thrives in low to bright, indirect light and is perfect for beginners or busy individuals."
+    },
+    {
+      "id": "13",
+      "name": "Calathea Medallion",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331314/calathea-medallion-plant-white-pot-removebg-preview_gokxbz.png",
+      "price": "$40",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "7 inches",
+      "potType": "Ceramic",
+      "description": "The Calathea Medallion is known for its striking, round leaves with intricate patterns. It prefers bright, indirect light and high humidity. This plant is perfect for adding a touch of elegance and pattern to your decor."
+    },
+    {
+      "id": "14",
+      "name": "Calathea Orbifolia",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331315/calathea-orbifolia-plant-terracotta-pot-home-decor-object-removebg-preview_sni2gt.png",
+      "price": "$45",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "7 inches",
+      "potType": "Terracotta",
+      "description": "The Calathea Orbifolia is admired for its large, round leaves with bold stripes. It thrives in low to bright, indirect light and requires high humidity. Its unique foliage adds a dramatic flair to any room."
+    },
+    {
+      "id": "15",
+      "name": "Calathea",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331314/calathea-plant-gray-pot-removebg-preview_c5nbpb.png",
+      "price": "$35",
+      "type": "Indoor",
+      "height": "1 ft",
+      "potSize": "8 inches",
+      "potType": "Ceramic",
+      "description": "Calathea plants are known for their stunning foliage with intricate patterns and vibrant colors. They prefer indirect light and high humidity. Perfect for adding a touch of sophistication to indoor spaces."
+    },
+    {
+      "id": "16",
+      "name": "Monstera Deliciosa",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331335/swiss_cheese_yhudbz.png",
+      "price": "$50",
+      "type": "Indoor",
+      "height": "4 ft",
+      "potSize": "10 inches",
+      "potType": "Ceramic",
+      "description": "Monstera Deliciosa, commonly known as the Swiss Cheese Plant, features large, glossy leaves with unique splits and holes. It thrives in bright, indirect light and adds a dramatic, tropical element to any decor."
+    },
+    {
+      "id": "17",
+      "name": "Pin Stripe Calathea",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331332/pinstripe_calathea_dbxmsg.png",
+      "price": "$40",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "6 inches",
+      "potType": "Terracotta",
+      "description": "The Pin Stripe Calathea features distinctive pinstripe patterns on its leaves, creating a striking appearance. It thrives in bright, indirect light and needs high humidity. This plant adds a unique touch to indoor gardens."
+    },
+    {
+      "id": "18",
+      "name": "Sansevieria Cylindrica",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331333/sanseviera_cylindrica_olvihg.png",
+      "price": "$70",
+      "type": "Indoor",
+      "height": "2 ft",
+      "potSize": "10 inches",
+      "potType": "Brass",
+      "description": "Sansevieria Cylindrica, also known as the Cylindrical Snake Plant, features tall, cylindrical leaves that add a modern touch to interiors. It is very low-maintenance and adaptable to various light conditions."
+    },
+    {
+      "id": "19",
+      "name": "Rubber Plant",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331333/rubber-plant-black-pot-removebg-preview_zexpbl.png",
+      "price": "$40",
+      "type": "Indoor",
+      "height": "4 ft",
+      "potSize": "10 inches",
+      "potType": "Plastic",
+      "description": "The Rubber Plant, or Ficus elastica, features large, glossy leaves that add a touch of elegance to any space. It prefers bright, indirect light and can tolerate low light conditions. It’s known for its robust nature and air-purifying qualities."
+    },
+    {
+      "id": "20",
+      "name": "fiddle leaf fig",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331322/fiddle-leaf-fig_xie0kn.png",
+      "height": "2ft.",
+      "potSize": "6 Inches",
+      "potType": "Ceramic",
+      "price": "$ 23.00",
+      "type": "Indoor",
+      "description": "The fiddle leaf fig is a striking indoor plant known for its large, glossy, violin-shaped leaves. It adds a touch of tropical elegance and can grow up to 10 feet tall indoors with proper care."
+    },
+    {
+      "id": "21",
+      "name": "Peace Lily",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331325/peace-lily-plant-white-pot-removebg-preview_mjmlt8.png",
+      "price": "$30",
+      "type": "Indoor",
+      "height": "3 ft",
+      "potSize": "7 inches",
+      "potType": "Ceramic",
+      "description": "The Peace Lily, or Spathiphyllum, is known for its elegant white blooms and dark green leaves. It thrives in low to moderate light and is famous for its air-purifying qualities. It’s an easy-to-care-for plant that adds serenity to any room."
+    }
+  ]
+}
