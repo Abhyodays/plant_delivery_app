@@ -3,7 +3,6 @@ import { Colors } from "../../constants/Colors";
 
 const styles = StyleSheet.create({
     card_container:{
-        height: 255,
         width: 155,
         marginRight:20
     },
@@ -17,7 +16,7 @@ const styles = StyleSheet.create({
         flex:0.9,
     },
     card_title:{
-        fontSize: 20,
+        fontSize: 18,
         marginTop: 10,
         marginHorizontal: 10,
         color:Colors.black

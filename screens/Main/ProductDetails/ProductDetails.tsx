@@ -3,7 +3,7 @@ import CommonStyles from '../../CommonStyles';
 import Header from "../../../components/Header/Header";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavParamList } from "../../../constants/NavParamaList";
 import InterText from "../../../components/InterText/InterText";
@@ -14,27 +14,31 @@ import { Colors } from "../../../constants/Colors";
 import PlantDetail from "../../../components/PlantDetail/PlantDetail";
 import styles from "./styles";
 import AddToCartButton from "../../../components/AddToCartButton/AddToCartButton";
+import useFetchPlant from "../../../hooks/useFetchPlant";
 
-export type ProductDetailsProps = { route: { params: { id: string } } };
+type PlantDetailsProp = {
+    route: {
+        params: { id: string }
+    }
+}
 
-function ProductDetails({ route }: ProductDetailsProps) {
-    const [plant, setPlant] = useState<Plant>();
+function ProductDetails({ route }: PlantDetailsProp) {
+    const id = route.params.id;
+    const { plant } = useFetchPlant(id);
     //dummy
     const [isLiked, setIsLiked] = useState<boolean>(false);
+
     const addToCart = (id?: string) => {
         console.log(`Plant ${id} added to cart`);
     }
     const handleLike = () => {
         setIsLiked(prev => !prev);
     }
+
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
     const goToHome = () => {
         navigation.goBack();
     }
-    useEffect(() => {
-        const currentPlant = plantsData.find(plant => plant.id === route.params.id);
-        setPlant(currentPlant);
-    }, [route.params.id]);
 
     return (
         <View style={[CommonStyles.container]}>

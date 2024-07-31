@@ -259,7 +259,7 @@
     {
       "id": "2",
       "name": "Bird's Nest",
-      "image_url": "url_to_birds_nest_image",
+      "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331314/birds-nest-plant-beige-pot-removebg-preview_v4yqtr.png",
       "price": "$35",
       "type": "Indoor",
       "height": "1 ft",

@@ -22,7 +22,7 @@ function PlantCard({ plant }: PlantCardProps) {
                 <View style={styles.card_image_container}>
                     <Image source={{ uri: plant.image_url }} style={styles.card_image} resizeMode="contain" />
                 </View>
-                <InterText style={styles.card_title}>{plant.name}</InterText>
+                <InterText style={styles.card_title} numberOfLines={1}>{plant.name}</InterText>
                 <InterText style={styles.card_price}>{plant.price}</InterText>
             </View>
         </TouchableOpacity>

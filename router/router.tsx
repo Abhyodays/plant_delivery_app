@@ -7,7 +7,7 @@ import { StatusBar } from "react-native";
 import { Colors } from "../constants/Colors";
 
 function router() {
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
     const [showSplashSreen, setShowSplashScreen] = useState<boolean>(false);
     return (
         <NavigationContainer>
