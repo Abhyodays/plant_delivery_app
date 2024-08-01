@@ -13,12 +13,23 @@ function Header({ Left }: { Left: React.JSX.Element }) {
     const goToCart = () => {
         navigation.navigate('Cart')
     }
+    const handleBack = () => {
+        navigation.goBack();
+    }
+    const goToWishlist = () => {
+        navigation.push('Wishlist')
+    }
     return (
         <View style={styles.headerContainer}>
             {Left}
-            <TouchableOpacity onPress={goToCart}>
-                <Icon name="bag" style={CommonStyles.icon} />
-            </TouchableOpacity>
+            <View style={styles.icon_container}>
+                <TouchableOpacity onPress={goToWishlist}>
+                    <Icon name="heart" size={28} color={Colors.black} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={goToCart}>
+                    <Icon name="bag" style={CommonStyles.icon} />
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }

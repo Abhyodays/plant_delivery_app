@@ -4,7 +4,7 @@ import { Colors } from "../../constants/Colors";
 const styles = StyleSheet.create({
     card_container:{
         width: 155,
-        marginRight:20
+        marginHorizontal:10
     },
     card_image_container:{
         width:'100%',

@@ -15,6 +15,8 @@ import PlantDetail from "../../../components/PlantDetail/PlantDetail";
 import styles from "./styles";
 import AddToCartButton from "../../../components/AddToCartButton/AddToCartButton";
 import useFetchPlant from "../../../hooks/useFetchPlant";
+import { useDispatch, useSelector } from "react-redux";
+import { setWishListPlant } from "../../../redux/wishlist/wishlist.actions";
 
 type PlantDetailsProp = {
     route: {
@@ -25,26 +27,40 @@ type PlantDetailsProp = {
 function ProductDetails({ route }: PlantDetailsProp) {
     const id = route.params.id;
     const { plant } = useFetchPlant(id);
+    const dispatch = useDispatch();
+    const wishlistPlants: Plant[] = useSelector((state: any) => state.wishlist.plants);
     //dummy
     const [isLiked, setIsLiked] = useState<boolean>(false);
 
     const addToCart = (id?: string) => {
         console.log(`Plant ${id} added to cart`);
     }
-    const handleLike = () => {
-        setIsLiked(prev => !prev);
+    const addToWishlist = () => {
+        if (!plant) return;
+        dispatch(setWishListPlant(plant))
     }
 
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
-    const goToHome = () => {
+
+    const handleBack = () => {
         navigation.goBack();
     }
+
+    useEffect(() => {
+        const isWishlist = wishlistPlants.find(p => p.id === plant?.id);
+        if (isWishlist) {
+            setIsLiked(true);
+        }
+        else {
+            setIsLiked(false)
+        }
+    }, [wishlistPlants])
 
     return (
         <View style={[CommonStyles.container]}>
             <Header
                 Left={
-                    <TouchableOpacity onPress={goToHome}>
+                    <TouchableOpacity onPress={handleBack}>
                         <Icon name="arrow-back" style={[CommonStyles.icon]} />
                     </TouchableOpacity>
                 }
@@ -86,7 +102,7 @@ function ProductDetails({ route }: PlantDetailsProp) {
                     <Icon
                         name="heart-circle-outline" size={50}
                         color={isLiked ? Colors.green : Colors.medium_grey}
-                        onPress={handleLike}
+                        onPress={addToWishlist}
                     />
                     <AddToCartButton addToCart={() => addToCart(plant?.id)} />
                 </View>

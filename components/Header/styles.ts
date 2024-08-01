@@ -6,6 +6,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         height: 50,
         alignItems: 'center',
+    },
+    icon_container:{
+        flexDirection:'row',
+        gap: 20,
+        alignItems:'center'
     }
 })
 

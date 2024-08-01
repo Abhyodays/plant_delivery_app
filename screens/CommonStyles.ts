@@ -25,7 +25,14 @@ const CommonStyles= StyleSheet.create({
     link:{
         fontSize: 16,
         textDecorationLine: "underline"
-    }
+    },
+    title: {
+        fontSize: 24,
+        color: Colors.black,
+        fontWeight: 'bold',
+        textTransform: 'capitalize',
+        marginBottom: 20
+    },
 })
 
 export default CommonStyles;

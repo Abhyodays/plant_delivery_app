@@ -8,7 +8,6 @@ async function fetchPlants(){
 function* watchGetPlants(){
     try{
         const plants:Plant[] = yield fetchPlants();
-        // console.log("all plants:", plants)
         yield put({type:GET_PLANTS_SUCCESS, payload:plants})
     }
     catch(err){
