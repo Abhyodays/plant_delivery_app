@@ -13,6 +13,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { NavParamList } from "../../../constants/NavParamaList";
+import WishlistPlantCard from "../../../components/WishlistPlantCard/WishlistPlantCard";
 
 function Wishlist() {
     const plants: Plant[] = useSelector((state: any) => state.wishlist.plants)
@@ -38,10 +39,14 @@ function Wishlist() {
                 data={plants}
                 renderItem={({ item }) => {
                     return (
-                        <PlantCard plant={item} />
+                        <WishlistPlantCard plant={item} />
                     )
                 }}
-                keyExtractor={(item) => item.id} />
+                keyExtractor={(item) => item.id}
+                numColumns={2}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{ alignItems: 'center' }}
+            />
         </View>
     )
 }
