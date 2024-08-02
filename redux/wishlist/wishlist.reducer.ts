@@ -1,5 +1,5 @@
 import { actionType, stateType } from "../redux.types";
-import { GET_WISHLIST_PLANTS_SUCCESS, SET_WISHLIST_PLANTS_SUCCESS } from "./wishlist.types";
+import { GET_WISHLIST_PLANTS_SUCCESS, REMOVE_WISHLIST_PLANT_SUCCESS, SET_WISHLIST_PLANTS_SUCCESS } from "./wishlist.types";
 
 const INITIAL_STATE:stateType= {
     plants:[]
@@ -14,6 +14,11 @@ const reducer = (state = INITIAL_STATE, action:actionType):stateType=>{
             }
         case SET_WISHLIST_PLANTS_SUCCESS:
             return {
+                ...state,
+                plants: action.payload
+            }
+        case REMOVE_WISHLIST_PLANT_SUCCESS:
+            return{
                 ...state,
                 plants: action.payload
             }

@@ -19,7 +19,8 @@ function AllPlants() {
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
     useEffect(() => {
         dispatch(getPlantsRequest());
-    }, [dispatch])
+    }, [])
+
 
     const handleBack = () => {
         navigation.goBack();

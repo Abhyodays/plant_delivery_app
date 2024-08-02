@@ -16,7 +16,7 @@ import styles from "./styles";
 import AddToCartButton from "../../../components/AddToCartButton/AddToCartButton";
 import useFetchPlant from "../../../hooks/useFetchPlant";
 import { useDispatch, useSelector } from "react-redux";
-import { setWishListPlant } from "../../../redux/wishlist/wishlist.actions";
+import { removeWishlistPlant, setWishListPlant } from "../../../redux/wishlist/wishlist.actions";
 
 type PlantDetailsProp = {
     route: {
@@ -35,9 +35,15 @@ function ProductDetails({ route }: PlantDetailsProp) {
     const addToCart = (id?: string) => {
         console.log(`Plant ${id} added to cart`);
     }
-    const addToWishlist = () => {
+    const handleLikeClick = () => {
         if (!plant) return;
-        dispatch(setWishListPlant(plant))
+        if (isLiked) {
+            dispatch(removeWishlistPlant(plant.id))
+        }
+        else {
+            dispatch(setWishListPlant(plant))
+        }
+        setIsLiked(il => !il);
     }
 
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
@@ -45,7 +51,6 @@ function ProductDetails({ route }: PlantDetailsProp) {
     const handleBack = () => {
         navigation.goBack();
     }
-
     useEffect(() => {
         const isWishlist = wishlistPlants.find(p => p.id === plant?.id);
         if (isWishlist) {
@@ -54,7 +59,7 @@ function ProductDetails({ route }: PlantDetailsProp) {
         else {
             setIsLiked(false)
         }
-    }, [wishlistPlants])
+    }, [plant, wishlistPlants])
 
     return (
         <View style={[CommonStyles.container]}>
@@ -102,7 +107,7 @@ function ProductDetails({ route }: PlantDetailsProp) {
                     <Icon
                         name="heart-circle-outline" size={50}
                         color={isLiked ? Colors.green : Colors.medium_grey}
-                        onPress={addToWishlist}
+                        onPress={handleLikeClick}
                     />
                     <AddToCartButton addToCart={() => addToCart(plant?.id)} />
                 </View>
