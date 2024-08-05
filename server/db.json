@@ -467,5 +467,11 @@
       "potType": "Ceramic",
       "description": "The Peace Lily, or Spathiphyllum, is known for its elegant white blooms and dark green leaves. It thrives in low to moderate light and is famous for its air-purifying qualities. It’s an easy-to-care-for plant that adds serenity to any room."
     }
+  ],
+  "cart": [
+    {
+      "userId": "hi",
+      "items": []
+    }
   ]
 }

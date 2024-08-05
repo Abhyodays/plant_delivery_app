@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import styles from "./styles";
 import { useDispatch } from "react-redux";
 import { removeWishlistPlant } from "../../redux/wishlist/wishlist.actions";
+import CommonStyles from "../../screens/CommonStyles";
 
 
 function WishlistPlantCard({ plant }: { plant: Plant }) {
@@ -14,7 +15,7 @@ function WishlistPlantCard({ plant }: { plant: Plant }) {
     }
     return (
         <View>
-            <Icon name="close-circle-sharp" style={styles.cancel_button} size={16} onPress={handleRemove} />
+            <Icon name="close-circle-sharp" style={CommonStyles.cancel_button} size={16} onPress={handleRemove} />
             <PlantCard plant={plant} />
         </View>
     )

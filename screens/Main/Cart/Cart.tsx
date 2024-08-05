@@ -1,32 +1,43 @@
-import { Button, Text } from "react-native";
+import { Button, Text, TouchableOpacity, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-// import { RootState } from "../../../redux/store";
-import { GET_PLANTS_SUCCESS } from "../../../redux/plants/plants.types";
-import { GET_POPULAR_PLANTS_SUCCESS } from "../../../redux/popularPlants/popularPlants.types";
+import { useEffect } from "react";
+import { getAllCartItems } from "../../../redux/cart/cart.actions";
+import CommonStyles from "../../CommonStyles";
+import Header from "../../../components/Header/Header";
+import InterText from "../../../components/InterText/InterText";
+import Icon from 'react-native-vector-icons/Ionicons'
+import { NavigatorScreenParams, useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { NavParamList } from "../../../constants/NavParamaList";
+import { FlatList } from "react-native-gesture-handler";
+import CartItemCard from "../../../components/CartItemCard/CartItemCard";
+import { CartItem } from "../../../types/CartItem";
 
 function Cart() {
-    const plant = useSelector((state: any) => state.plants.plants);
-    console.log(plant);
+    const cartItems: CartItem[] = useSelector((state: any) => state.cart.items)
+    const navigation = useNavigation<StackNavigationProp<NavParamList>>();
     const dispatch = useDispatch();
-    const handlePress = () => {
-        dispatch({
-            type: GET_POPULAR_PLANTS_SUCCESS, payload: [{
-                id: "6",
-                name: 'fiddle leaf fig',
-                image_url: 'https://res.cloudinary.com/dvpkfifkk/image/upload/v1722234419/fiddle-leaf-fig_lwsmkm.png',
-                height: "2ft.",
-                potSize: "6 Inches",
-                potType: "Ceramic",
-                price: "$ 23.00",
-                type: "Indoor",
-                description: "The fiddle leaf fig is a striking indoor plant known for its large, glossy, violin-shaped leaves. It adds a touch of tropical elegance and can grow up to 10 feet tall indoors with proper care."
-            }]
-        });
+    // console.log("cart:", cartItems)
+    const handleBack = () => {
+        navigation.goBack();
     }
+    useEffect(() => {
+        dispatch(getAllCartItems())
+    }, [])
     return (
-        <>
-            <Button title='inject' onPress={handlePress} />
-        </>
+        <View style={CommonStyles.container}>
+            <Header Left={
+                <TouchableOpacity onPress={handleBack}>
+                    <Icon name="arrow-back" style={[CommonStyles.icon]} />
+                </TouchableOpacity>
+            } />
+            <View>
+                <InterText style={CommonStyles.title}>Cart</InterText>
+            </View>
+            <FlatList
+                data={cartItems}
+                renderItem={({ item }) => <CartItemCard id={item.id} item={item.item} />} />
+        </View>
     )
 }
 

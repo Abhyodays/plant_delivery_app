@@ -9,6 +9,8 @@ import newArrivalsReducer from './newPlants/newPlants.reducers'
 import plantsSaga from './plants/plants.saga';
 import wishlistReducer from './wishlist/wishlist.reducer'
 import wishlistSaga from './wishlist/wishlist.sagas';
+import cartRreducer from './cart/cart.reducer';
+import cartSaga from './cart/cart.saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -16,13 +18,16 @@ const rootReducer = combineReducers({
     plants: plantsReducer,
     popularPlants: popularPlantsReducer,
     newPlants: newArrivalsReducer,
-    wishlist:wishlistReducer
+    wishlist:wishlistReducer,
+    cart: cartRreducer
 })
 const store = createStore(rootReducer,applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(popularPlantsSaga);
 sagaMiddleware.run(newArrivalsSaga);
 sagaMiddleware.run(plantsSaga);
-sagaMiddleware.run(wishlistSaga)
+sagaMiddleware.run(wishlistSaga);
+sagaMiddleware.run(cartSaga);
+
 
 
 export type RootState = typeof store;

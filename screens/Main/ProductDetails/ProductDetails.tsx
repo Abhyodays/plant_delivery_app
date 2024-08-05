@@ -17,6 +17,7 @@ import AddToCartButton from "../../../components/AddToCartButton/AddToCartButton
 import useFetchPlant from "../../../hooks/useFetchPlant";
 import { useDispatch, useSelector } from "react-redux";
 import { removeWishlistPlant, setWishListPlant } from "../../../redux/wishlist/wishlist.actions";
+import { addItemToCart } from "../../../redux/cart/cart.actions";
 
 type PlantDetailsProp = {
     route: {
@@ -32,8 +33,9 @@ function ProductDetails({ route }: PlantDetailsProp) {
     //dummy
     const [isLiked, setIsLiked] = useState<boolean>(false);
 
-    const addToCart = (id?: string) => {
-        console.log(`Plant ${id} added to cart`);
+    const addToCart = () => {
+        if (!plant) return;
+        dispatch(addItemToCart(plant))
     }
     const handleLikeClick = () => {
         if (!plant) return;
@@ -109,7 +111,7 @@ function ProductDetails({ route }: PlantDetailsProp) {
                         color={isLiked ? Colors.green : Colors.medium_grey}
                         onPress={handleLikeClick}
                     />
-                    <AddToCartButton addToCart={() => addToCart(plant?.id)} />
+                    <AddToCartButton addToCart={() => addToCart()} />
                 </View>
             </View>
         </View>

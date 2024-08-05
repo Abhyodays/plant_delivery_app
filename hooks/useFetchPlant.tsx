@@ -10,7 +10,7 @@ const useFetchPlant = (id: string) => {
         setError(null);
         setLoading(true);
         try {
-            const res = await fetch(`http://10.0.2.2:3000/${id}`);
+            const res = await fetch(`http://10.0.2.2:3000/plants/${id}`);
             if (!res.ok) {
                 throw new Error("Network response was not ok.");
             }
