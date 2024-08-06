@@ -6,7 +6,7 @@ import CommonStyles from '../../CommonStyles'
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Header from "../../../components/Header/Header";
 import InterText from "../../../components/InterText/InterText";
-import Search from "../../../components/Search/Search";
+import SearchCard from "../../../components/SearchCard/SearchCard";
 import SectionHead from "../../../components/SectionHead/SectionHead";
 import styles from "./styles";
 import HorizontalList from "../../../components/HorizontalList/HorizontalList";
@@ -38,7 +38,7 @@ function Home() {
             }
             />
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Search />
+                <SearchCard />
                 <SectionHead title="Popular plants" />
                 <HorizontalList data={popularPlants} />
                 <SectionHead title="New arrivals" />

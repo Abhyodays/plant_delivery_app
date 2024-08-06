@@ -7,5 +7,6 @@ export type NavParamList = {
     Home:undefined,
     ProductDetails:{id:string},
     Wishlist:undefined,
-    AllPlants:undefined
+    AllPlants:undefined,
+    Search:undefined
 }

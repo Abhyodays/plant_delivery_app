@@ -5,9 +5,8 @@ import ProductDetails from "../../screens/Main/ProductDetails/ProductDetails";
 import Wishlist from "../../screens/Main/Wishlist/Wishlist";
 import Cart from "../../screens/Main/Cart/Cart";
 import Account from "../../screens/Main/Account/Account";
-import { StatusBar } from "react-native";
-import { Colors } from "../../constants/Colors";
 import AllPlants from "../../screens/Main/AllPlants/AllPlants";
+import Search from '../../screens/Main/Search/Search'
 
 function MainStack() {
     const Stack = createStackNavigator<NavParamList>();
@@ -19,6 +18,7 @@ function MainStack() {
             <Stack.Screen name="Cart" component={Cart} />
             <Stack.Screen name="Account" component={Account} />
             <Stack.Screen name="AllPlants" component={AllPlants} />
+            <Stack.Screen name="Search" component={Search} />
         </Stack.Navigator>
     )
 }

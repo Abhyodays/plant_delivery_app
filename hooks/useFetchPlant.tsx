@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { Plant } from "../types/Plant"
 
-const useFetchPlant = (id: string) => {
-    const [plant, setPlant] = useState<Plant>();
+const useFetchPlant = (query: string) => {
+    const [data, setData] = useState<Plant | Plant[]>();
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
@@ -10,12 +10,12 @@ const useFetchPlant = (id: string) => {
         setError(null);
         setLoading(true);
         try {
-            const res = await fetch(`http://10.0.2.2:3000/plants/${id}`);
+            const res = await fetch(`http://10.0.2.2:3000/${query}`);
             if (!res.ok) {
                 throw new Error("Network response was not ok.");
             }
             const data = await res.json();
-            setPlant(data);
+            setData(data);
         }
         catch (err) {
             setError(err instanceof Error ? err.message : "Network response was not ok.")
@@ -27,8 +27,8 @@ const useFetchPlant = (id: string) => {
 
     useEffect(() => {
         fetchPlant();
-    }, [id])
-    return { plant, loading, error }
+    }, [query])
+    return { data, loading, error }
 }
 
 export default useFetchPlant;

@@ -24,10 +24,12 @@ type PlantDetailsProp = {
         params: { id: string }
     }
 }
-
+type response = {
+    data: Plant
+}
 function ProductDetails({ route }: PlantDetailsProp) {
     const id = route.params.id;
-    const { plant } = useFetchPlant(id);
+    const { data: plant }: response = useFetchPlant(`plants/${id}`);
     const dispatch = useDispatch();
     const wishlistPlants: Plant[] = useSelector((state: any) => state.wishlist.plants);
     //dummy

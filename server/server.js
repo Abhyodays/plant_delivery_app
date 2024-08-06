@@ -28,27 +28,7 @@ const writeData = (data) => {
     }
 };
 
-app.get('/users', (req, res) => {
-    const data = readData();
-    if (data) {
-        res.json(data.users);
-    } else {
-        res.status(500).json({ message: 'Error reading data' });
-    }
-});
-app.get('/users/:id', (req, res) => {
-    const data = readData();
-    if (data) {
-        const user = data.users.find(u => u.id === req.params.id);
-        if (user) {
-            res.json(user);
-        } else {
-            res.status(404).json({ message: 'User not found' });
-        }
-    } else {
-        res.status(500).json({ message: 'Error reading data' });
-    }
-});
+
 
 app.get('/plants', (req, res) => {
     const data = readData();
@@ -147,6 +127,35 @@ app.delete('/cart/:userId/:itemId', (req, res) => {
     writeData(data);
     res.json({ message: 'Item removed from cart' });
 });
+app.get('/search-plants', (req, res) => {
+    const { q } = req.query;
+    const data = readData();
+    if (!data || !data.plants) {
+        return res.status(500).json({ message: 'Error reading data' });
+    }
+
+    const ignoredKeywords = ['plants'];
+    const keyword = typeof q === 'string' ? q.toLowerCase() : '';
+    const keywords = keyword.split(' ')
+        .filter(keyword => keyword.trim() && !ignoredKeywords.includes(keyword.trim()));
+
+    if (keywords.length === 0) {
+        return res.json([]);
+    }
+
+    const filteredPlants = data.plants.filter((plant) => {
+        return keywords.every(keyword =>
+            plant.name.toLowerCase().includes(keyword) ||
+            plant.type.toLowerCase().includes(keyword) ||
+            plant.potType.toLowerCase().includes(keyword) ||
+            plant.price.toLowerCase().includes(keyword) ||
+            plant.description.toLowerCase().includes(keyword)
+        );
+    });
+
+    res.json(filteredPlants);
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

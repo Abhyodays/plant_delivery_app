@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     text:{
         fontSize: 18,
         flex:1,
-        marginRight: 8
+        marginVertical: 15,
+        marginLeft: 5
     }
 })
 
