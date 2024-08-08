@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
     },
     button_container: {
         alignItems: 'center',
-        marginTop: 100
+        marginTop: 100,
+        marginBottom: 20
     },
     button: {
         flexDirection: 'row',

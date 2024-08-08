@@ -50,6 +50,7 @@ function Search() {
                 style={styles.result_container}
                 numColumns={2}
                 showsVerticalScrollIndicator={false}
+                contentContainerStyle={{ alignItems: 'center' }}
             />
 
         </View>

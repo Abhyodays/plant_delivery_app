@@ -28,7 +28,26 @@ const writeData = (data) => {
     }
 };
 
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    const data = readData();
 
+    if (!data || !data.users) {
+        return res.status(500).json({ message: 'Error reading data' });
+    }
+    const user = data.users.find(user => user.email === email.trim().toLowerCase() && user.password === password.trim());
+    console.log(user)
+    if (user) {
+        const userWithoutPassword = {
+            name: user.name,
+            email: user.email,
+            id: user.id
+        }
+        res.json({ message: 'Login successful', user: userWithoutPassword });
+    } else {
+        res.status(401).json({ message: 'Invalid email or password' });
+    }
+});
 
 app.get('/plants', (req, res) => {
     const data = readData();

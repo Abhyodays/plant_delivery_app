@@ -20,6 +20,7 @@ function Home() {
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
     const popularPlants = useSelector((state: any) => state.popularPlants.plants);
     const newPlants = useSelector((state: any) => state.newPlants.plants)
+    const user = useSelector((state: any) => state.user.user)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -32,7 +33,7 @@ function Home() {
             <Header Left={
                 <TouchableOpacity onPress={() => navigation.navigate('Account')}>
                     <InterText style={[styles.headerText, styles.bold]}>
-                        <InterText>Welcome,</InterText> Trisha
+                        <InterText>Welcome,</InterText> {user.name}
                     </InterText>
                 </TouchableOpacity>
             }

@@ -11,6 +11,8 @@ import wishlistReducer from './wishlist/wishlist.reducer'
 import wishlistSaga from './wishlist/wishlist.sagas';
 import cartRreducer from './cart/cart.reducer';
 import cartSaga from './cart/cart.saga';
+import userReducer from './user/user.reducer'
+import userSaga from './user/user.saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,7 +21,8 @@ const rootReducer = combineReducers({
     popularPlants: popularPlantsReducer,
     newPlants: newArrivalsReducer,
     wishlist:wishlistReducer,
-    cart: cartRreducer
+    cart: cartRreducer,
+    user:userReducer
 })
 const store = createStore(rootReducer,applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(popularPlantsSaga);
@@ -27,6 +30,7 @@ sagaMiddleware.run(newArrivalsSaga);
 sagaMiddleware.run(plantsSaga);
 sagaMiddleware.run(wishlistSaga);
 sagaMiddleware.run(cartSaga);
+sagaMiddleware.run(userSaga);
 
 
 
