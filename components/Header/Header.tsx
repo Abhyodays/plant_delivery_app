@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleProp, StyleSheet, Text, TouchableOpacity, View, ViewProps, ViewStyle } from "react-native";
 import { TouchableHighlight } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/Ionicons'
 import { Colors } from "../../constants/Colors";
@@ -7,8 +7,13 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { NavParamList } from "../../constants/NavParamaList";
 import CommonStyles from "../../screens/CommonStyles";
 import styles from "./styles";
+import { dark, light } from "../../types/IconColor";
 
-function Header({ Left }: { Left: React.JSX.Element }) {
+type HeaderProps = {
+    style?: StyleProp<ViewStyle>,
+    iconStyle?: string
+}
+function Header({ style, iconStyle }: HeaderProps) {
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
     const goToCart = () => {
         navigation.navigate('Cart')
@@ -17,17 +22,19 @@ function Header({ Left }: { Left: React.JSX.Element }) {
         navigation.goBack();
     }
     const goToWishlist = () => {
-        navigation.push('Wishlist')
+        navigation.navigate('Wishlist')
     }
     return (
-        <View style={styles.headerContainer}>
-            {Left}
+        <View style={[styles.headerContainer, style]}>
+            <TouchableOpacity onPress={handleBack}>
+                <Icon name="arrow-back" style={[CommonStyles.icon, { color: iconStyle == light ? Colors.white : Colors.black }]} />
+            </TouchableOpacity>
             <View style={styles.icon_container}>
                 <TouchableOpacity onPress={goToWishlist}>
-                    <Icon name="heart" size={28} color={Colors.black} />
+                    <Icon name="heart" size={28} style={[{ color: iconStyle == light ? Colors.white : Colors.black }]} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={goToCart}>
-                    <Icon name="bag" style={CommonStyles.icon} />
+                    <Icon name="bag" style={[CommonStyles.icon, { color: iconStyle == light ? Colors.white : Colors.black }]} />
                 </TouchableOpacity>
             </View>
         </View>

@@ -1,4 +1,4 @@
-import { Button, Text, TouchableOpacity, View } from "react-native";
+import { Button, StatusBar, Text, TouchableOpacity, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllCartItems } from "../../../redux/cart/cart.actions";
@@ -12,6 +12,7 @@ import { NavParamList } from "../../../constants/NavParamaList";
 import { FlatList } from "react-native-gesture-handler";
 import CartItemCard from "../../../components/CartItemCard/CartItemCard";
 import { CartItem } from "../../../types/CartItem";
+import { Colors } from "../../../constants/Colors";
 
 function Cart() {
     const cartItems: CartItem[] = useSelector((state: any) => state.cart.items)
@@ -26,11 +27,8 @@ function Cart() {
     }, [])
     return (
         <View style={CommonStyles.container}>
-            <Header Left={
-                <TouchableOpacity onPress={handleBack}>
-                    <Icon name="arrow-back" style={[CommonStyles.icon]} />
-                </TouchableOpacity>
-            } />
+            <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
+            <Header />
             <View>
                 <InterText style={CommonStyles.title}>Cart</InterText>
             </View>

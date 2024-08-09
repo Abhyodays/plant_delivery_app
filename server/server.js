@@ -49,6 +49,30 @@ app.post('/login', (req, res) => {
     }
 });
 
+app.put('/users/:id', (req, res) => {
+    const userId = req.params.id;
+    const { name, email } = req.body;
+
+    const data = readData();
+    if (!data || !data.users) {
+        return res.status(500).json({ message: 'Error reading data' });
+    }
+
+    const userIndex = data.users.findIndex(user => user.id === userId);
+    if (userIndex === -1) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (name) {
+        data.users[userIndex].name = name;
+    }
+    if (email) {
+        data.users[userIndex].email = email.trim().toLowerCase();
+    }
+
+    writeData(data);
+    res.json({ message: 'User updated successfully', user: data.users[userIndex] });
+});
 app.get('/plants', (req, res) => {
     const data = readData();
     if (data) {

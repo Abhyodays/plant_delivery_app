@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, View } from "react-native";
+import { Image, ScrollView, StatusBar, StyleSheet, View } from "react-native";
 import CommonStyles from '../../CommonStyles';
 import Header from "../../../components/Header/Header";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -67,13 +67,8 @@ function ProductDetails({ route }: PlantDetailsProp) {
 
     return (
         <View style={[CommonStyles.container]}>
-            <Header
-                Left={
-                    <TouchableOpacity onPress={handleBack}>
-                        <Icon name="arrow-back" style={[CommonStyles.icon]} />
-                    </TouchableOpacity>
-                }
-            />
+            <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
+            <Header />
             <ScrollView style={styles.scrollview_content} showsVerticalScrollIndicator={false}>
 
                 <View style={styles.header}>

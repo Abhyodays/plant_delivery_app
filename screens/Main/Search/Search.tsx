@@ -1,4 +1,4 @@
-import { FlatList, TextInput, View } from "react-native";
+import { FlatList, StatusBar, TextInput, View } from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons'
 import CommonStyles from "../../CommonStyles";
 import { useNavigation } from "@react-navigation/native";
@@ -10,6 +10,7 @@ import { Colors } from "../../../constants/Colors";
 import useFetchPlant from "../../../hooks/useFetchPlant";
 import { Plant } from "../../../types/Plant";
 import PlantCard from "../../../components/PlantCard/PlantCard";
+import CustomFlatList from "../../../components/CustomFlatList/CustomeFlatList";
 
 function Search() {
     const [value, setValue] = useState<string>("");
@@ -30,6 +31,7 @@ function Search() {
     }
     return (
         <View style={CommonStyles.container}>
+            <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
             <View style={styles.header}>
                 <Icon name="arrow-back" style={[CommonStyles.icon]} onPress={goBack} />
                 <View style={styles.input_container}>
@@ -44,14 +46,7 @@ function Search() {
                     />
                 </View>
             </View>
-            <FlatList
-                data={plants}
-                renderItem={({ item }) => <PlantCard plant={item} />}
-                style={styles.result_container}
-                numColumns={2}
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={{ alignItems: 'center' }}
-            />
+            <CustomFlatList CustomCard={PlantCard} data={plants} />
 
         </View>
     )

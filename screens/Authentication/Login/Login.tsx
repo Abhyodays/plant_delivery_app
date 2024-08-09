@@ -11,7 +11,6 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import styles from "./styles";
 import { useEffect, useState } from "react";
 import { Credential } from "../../../types/Credential";
-import { useDispatch, useSelector } from "react-redux";
 import useUserData from "../../../hooks/useUserData";
 
 

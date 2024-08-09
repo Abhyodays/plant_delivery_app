@@ -35,8 +35,31 @@ const useUserData = (url: string) => {
             setError(err instanceof Error ? err.message : "Login Failed");
         }
     }
+    async function update(user: User) {
+        try {
+            const response = await fetch(url, {
+                method: 'PUT',
+                body: JSON.stringify(user),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || "Update Failed");
+            }
+            const data = await response.json();
+            setData(data.user)
+            setError(null)
+            dispatch(saveUser(data.user));
+        }
+        catch (err) {
+            console.log(err)
+            setError(err instanceof Error ? err.message : "Update Failed");
+        }
+    }
 
-    return { data, error, login }
+    return { data, error, login, update }
 }
 
 export default useUserData;

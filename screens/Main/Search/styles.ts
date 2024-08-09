@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
     header:{
         flexDirection:'row',
         alignItems:'center',
-        gap: 20
+        gap: 20,
+        marginBottom: 20
     },
     input_container:{
         borderWidth:1,

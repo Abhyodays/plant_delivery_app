@@ -17,7 +17,6 @@ function router() {
     }, [])
     return (
         <NavigationContainer>
-            <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
             {
                 showSplashSreen ?
                     <SplashScreenStack />
