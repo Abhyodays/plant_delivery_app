@@ -17,38 +17,38 @@ import useUserData from "../../../hooks/useUserData";
 function Login() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [loginError, setLoginError] = useState<string | null>(null);
+    const [loginAttempt, setLoginAttempt] = useState<number>(0)
     const { data, error, login } = useUserData("http://10.0.2.2:3000/login");
+    const [loginError, setLoginError] = useState<string | null>(error);
+
 
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
     const goToSignup = () => {
         navigation.push('Signup')
     }
-    const handleLogin = () => {
+    const handleLogin = async () => {
         const user: Credential = {
             email,
             password
         }
         if (email.trim() === "") {
-            setLoginError("Email is required!");
+            loginAlert("Email is required!");
             return;
         }
         if (password.trim() === "") {
-            setLoginError("Password is required");
+            loginAlert("Password is required")
             return;
         }
         login(user);
+        setLoginAttempt(loginAttempt + 1);
+    }
+
+    const loginAlert = (message: string) => {
+        Alert.alert("Login", message)
     }
     useEffect(() => {
-        setLoginError(error);
-    }, [error])
-
-    useEffect(() => {
-        if (loginError) {
-            Alert.alert(loginError);
-            setLoginError(null);
-        }
-    }, [loginError])
+        error && loginAlert(error)
+    }, [error, loginAttempt])
 
 
     return (

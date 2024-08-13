@@ -42,7 +42,7 @@ function Home() {
             <View style={styles.headerContainer}>
                 <TouchableOpacity onPress={() => navigation.navigate('Account')}>
                     <InterText style={[styles.headerText]}>
-                        Welcome, <InterText style={[styles.bold, CommonStyles.link]}>{user.name}</InterText>
+                        Welcome, <InterText style={[styles.bold, CommonStyles.link]}>{user?.name}</InterText>
                     </InterText>
                 </TouchableOpacity>
                 <View style={styles.icon_container}>

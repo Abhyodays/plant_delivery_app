@@ -20,9 +20,9 @@ import useUserData from "../../../hooks/useUserData";
 
 function Account() {
     const dispatch = useDispatch();
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
     const user: User = useSelector((state: any) => state.user.user);
+    const [name, setName] = useState(user.name);
+    const [email, setEmail] = useState(user.email);
     const { data, error, update } = useUserData(`http://10.0.2.2:3000/users/${user.id}`);
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
     const updateUser = () => {
@@ -62,12 +62,7 @@ function Account() {
             }
         );
     }
-    useEffect(() => {
-        if (user) {
-            setName(user.name);
-            setEmail(user.email)
-        }
-    }, [user])
+
 
 
     return (
