@@ -5,7 +5,7 @@ import { Plant } from "../../types/Plant";
 import {v4 as uuid} from 'uuid';
 
 async function removeCartItem(id:string){
-    return fetch(`http://10.0.2.2:3000/cart/hi/${id}`, {
+    return fetch(`${process.env.BASE_URL}/cart/hi/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ async function removeCartItem(id:string){
         id: uuid(),
         item
     };
-    return fetch(`http://10.0.2.2:3000/cart/hi`,{
+    return fetch(`${process.env.BASE_URL}/cart/hi`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ async function removeCartItem(id:string){
     })
 }
 async function getAllCartItem(){
-    return fetch("http://10.0.2.2:3000/cart/hi").then(res => res.json());
+    return fetch(`${process.env.BASE_URL}/cart/hi`).then(res => res.json());
 }
 
 function* watchRemoveCartItem(action:any){

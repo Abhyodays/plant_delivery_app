@@ -40,6 +40,11 @@ const CommonStyles= StyleSheet.create({
         zIndex: 5,
         fontSize: 24,
         color:Colors.dark_grey,
+    },
+    error_text:{
+        color:'red',
+        fontSize:16,
+        fontWeight:'bold'
     }
 })
 

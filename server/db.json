@@ -479,7 +479,22 @@
   "cart": [
     {
       "userId": "hi",
-      "items": []
+      "items": [
+        {
+          "id": "ba91f909-0b10-4d7c-a20b-753d7036ebd9",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        }
+      ]
     }
   ]
 }

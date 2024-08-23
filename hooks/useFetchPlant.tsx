@@ -10,7 +10,7 @@ const useFetchPlant = (query: string) => {
         setError(null);
         setLoading(true);
         try {
-            const res = await fetch(`http://10.0.2.2:3000/${query}`);
+            const res = await fetch(`${process.env.BASE_URL}/${query}`);
             if (!res.ok) {
                 throw new Error("Network response was not ok.");
             }

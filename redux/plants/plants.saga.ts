@@ -3,7 +3,7 @@ import { GET_PLANTS_REQUEST, GET_PLANTS_SUCCESS } from './plants.types';
 import { Plant } from '../../types/Plant';
 
 async function fetchPlants(){
-    return fetch("http://10.0.2.2:3000/plants").then(res=> res.json())
+    return fetch(`${process.env.BASE_URL}/plants`).then(res=> res.json())
 }
 function* watchGetPlants(){
     try{

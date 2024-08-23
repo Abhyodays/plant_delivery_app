@@ -3,7 +3,7 @@ import { GET_NEW_PLANTS_REQUEST, GET_NEW_PLANTS_SUCCESS } from "./newPlants.type
 import { Plant } from "../../types/Plant";
 
 async function fetchNewArrivals(){
-    return await fetch("http://10.0.2.2:3000/new-arrivals").then(res => res.json())
+    return await fetch(`${process.env.BASE_URL}/new-arrivals`).then(res => res.json())
 }
 function *watchGetNewPlants(action:any){
     try{

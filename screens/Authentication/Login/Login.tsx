@@ -12,14 +12,12 @@ import styles from "./styles";
 import { useEffect, useState } from "react";
 import { Credential } from "../../../types/Credential";
 import useUserData from "../../../hooks/useUserData";
+import useInputValidation from "../../../hooks/useInputValidation";
 
 
 function Login() {
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [loginAttempt, setLoginAttempt] = useState<number>(0)
-    const { data, error, login } = useUserData("http://10.0.2.2:3000/login");
-    const [loginError, setLoginError] = useState<string | null>(error);
+    const { data, error, login } = useUserData(`${process.env.BASE_URL}/login`);
+    const { values, errors, handleChangeValues, validate } = useInputValidation();
 
 
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
@@ -28,27 +26,14 @@ function Login() {
     }
     const handleLogin = async () => {
         const user: Credential = {
-            email,
-            password
+            email: values.email,
+            password: values.password
         }
-        if (email.trim() === "") {
-            loginAlert("Email is required!");
-            return;
-        }
-        if (password.trim() === "") {
-            loginAlert("Password is required")
-            return;
-        }
+        validate();
         login(user);
-        setLoginAttempt(loginAttempt + 1);
     }
 
-    const loginAlert = (message: string) => {
-        Alert.alert("Login", message)
-    }
-    useEffect(() => {
-        error && loginAlert(error)
-    }, [error, loginAttempt])
+
 
 
     return (
@@ -65,16 +50,19 @@ function Login() {
                     <View style={styles.main_content}>
                         <TextInput label="Email" mode="outlined" outlineColor={Colors.green}
                             activeOutlineColor={Colors.green} style={styles.input}
-                            value={email}
-                            onChangeText={(text) => setEmail(text)}
+                            value={values['email']}
+                            onChangeText={(text) => handleChangeValues('email', text)}
                         />
+                        {errors['email'] && <InterText style={CommonStyles.error_text}>{errors['email']}</InterText>}
                         <TextInput label="Password" mode="outlined" outlineColor={Colors.green}
                             activeOutlineColor={Colors.green}
                             style={styles.input}
-                            value={password}
-                            onChangeText={(text) => setPassword(text)}
+                            value={values['password']}
+                            onChangeText={(text) => handleChangeValues('password', text)}
                             secureTextEntry={true}
                         />
+                        {errors['password'] && <InterText style={CommonStyles.error_text}>{errors['password']}</InterText>}
+                        {error && <InterText style={CommonStyles.error_text}>{error}</InterText>}
                     </View>
                     <View style={styles.button_container}>
                         <TouchableOpacity style={[CommonStyles.button, styles.button]} onPress={handleLogin} activeOpacity={0.8}>

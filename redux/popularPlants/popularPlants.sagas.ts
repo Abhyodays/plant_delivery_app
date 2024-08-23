@@ -3,7 +3,7 @@ import { GET_POPULAR_PLANTS_REQUEST, GET_POPULAR_PLANTS_SUCCESS } from './popula
 import { Plant } from '../../types/Plant';
 
 async function fetchPopularPlants() {
-    return fetch('http://10.0.2.2:3000/popular-plants').then(res => res.json());
+    return fetch(`${process.env.BASE_URL}/popular-plants`).then(res => res.json());
 }
 function* workerGetPopularPlants(){
     try{  

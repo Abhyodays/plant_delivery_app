@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
         color: Colors.green,
     },
     main_content: {
-        marginTop: '25%',
-        gap: 20
+        marginTop: '25%'
     },
     input: {
         height: 60,
         fontSize: 20,
+        marginVertical: 5
     },
     button_container: {
         alignItems: 'center',
