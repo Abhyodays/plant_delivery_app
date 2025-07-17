@@ -7,6 +7,8 @@ import Cart from "../../screens/Main/Cart/Cart";
 import Account from "../../screens/Main/Account/Account";
 import AllPlants from "../../screens/Main/AllPlants/AllPlants";
 import Search from '../../screens/Main/Search/Search'
+import Confirmation from "../../screens/Main/Order/Confirmation";
+import Orders from "../../screens/Main/Order/Orders";
 
 function MainStack() {
     const Stack = createStackNavigator<NavParamList>();
@@ -19,6 +21,8 @@ function MainStack() {
             <Stack.Screen name="Account" component={Account} />
             <Stack.Screen name="AllPlants" component={AllPlants} />
             <Stack.Screen name="Search" component={Search} />
+            <Stack.Screen name="Confirmation" component={Confirmation} />
+            <Stack.Screen name="Orders" component={Orders} />
         </Stack.Navigator>
     )
 }

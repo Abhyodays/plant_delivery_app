@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     },
     icon_container:{
         flexDirection:'row',
-        gap: 20,
+        gap: 12,
         alignItems:'center'
     }
 })

@@ -17,12 +17,14 @@ import { getNewArrivalsPlants } from "../../../redux/newPlants/newPlants.actions
 import { getPlantsRequest } from "../../../redux/plants/plants.actions";
 import { Colors } from "../../../constants/Colors";
 import Icon from 'react-native-vector-icons/Ionicons'
+import FA5 from 'react-native-vector-icons/FontAwesome5'
 
 function Home() {
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
     const popularPlants = useSelector((state: any) => state.popularPlants.plants);
     const newPlants = useSelector((state: any) => state.newPlants.plants)
     const user = useSelector((state: any) => state.user.user)
+    console.log({ user })
     const dispatch = useDispatch();
 
     const goToCart = () => {
@@ -30,6 +32,9 @@ function Home() {
     }
     const goToWishlist = () => {
         navigation.push('Wishlist');
+    }
+    const goToOrders = () => {
+        navigation.navigate('Orders')
     }
     useEffect(() => {
         dispatch(getPopularPlants());
@@ -51,6 +56,9 @@ function Home() {
                     </TouchableOpacity>
                     <TouchableOpacity onPress={goToCart}>
                         <Icon name="bag" style={CommonStyles.icon} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={goToOrders}>
+                        <FA5 name="box-open" style={CommonStyles.icon} />
                     </TouchableOpacity>
                 </View>
             </View>

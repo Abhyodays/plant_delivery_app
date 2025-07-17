@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         backgroundColor:Colors.light_green,
         borderRadius: 20,
         alignItems:'center',
-        gap: 30,
+        // gap: 30,
         marginBottom: 20
     },
     card_image:{
@@ -28,6 +28,26 @@ const styles = StyleSheet.create({
     },
     card_price:{
         fontWeight:'bold'
+    },
+     container: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+        borderWidth: 3,
+        borderStyle: 'solid',
+        borderRadius: 50,
+        paddingHorizontal: 10
+    },
+    button_text: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: Colors.black
+    },
+    flex_row:{
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center'
     }
 })
 

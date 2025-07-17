@@ -479,9 +479,28 @@
   "cart": [
     {
       "userId": "hi",
+      "items": []
+    },
+    {
+      "userId": "[object Object]",
       "items": [
         {
-          "id": "c7385bd0-cc31-44b6-8643-89a525ac14fe",
+          "id": "88cc360d-60e5-4c2a-8cb4-113be094711e"
+        }
+      ]
+    },
+    {
+      "userId": "1",
+      "items": []
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "6d308b0e-9bdd-4cd8-a778-c6f2500af9c2",
+      "userId": "hi",
+      "items": [
+        {
+          "id": "0cae40cc-3cef-4c81-aae3-94220d90c5af",
           "item": {
             "id": "1",
             "name": "African Mask",
@@ -492,6 +511,348 @@
             "potSize": "1 ft",
             "potType": "Ceramic",
             "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "2a8a75aa-d562-41c7-b2ad-005d65c35f5a",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "52fbba5a-b4eb-4c88-a5dd-a46584301d6a",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "8d904f9c-a112-4424-9ca1-0f4faebfcc78",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        }
+      ]
+    },
+    {
+      "orderId": "51f76b79-765a-4788-9f73-6231fabff1a7",
+      "userId": "hi",
+      "items": [
+        {
+          "id": "36aa07d8-1287-4f3c-bdb4-48e982ac923a",
+          "item": {
+            "id": "2",
+            "name": "Bird's Nest",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331314/birds-nest-plant-beige-pot-removebg-preview_v4yqtr.png",
+            "price": "$35",
+            "type": "Indoor",
+            "height": "1 ft",
+            "potSize": "8 inches",
+            "potType": "Plastic",
+            "description": "The Bird's Nest Fern, or Asplenium nidus, features glossy, wavy fronds that form a rosette shape. It prefers indirect light and a humid environment. Its unique form resembles a bird's nest, adding a touch of greenery to any space."
+          }
+        },
+        {
+          "id": "45e2ada0-ee74-4e4a-b206-43296855e4ec",
+          "item": {
+            "id": "2",
+            "name": "Bird's Nest",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331314/birds-nest-plant-beige-pot-removebg-preview_v4yqtr.png",
+            "price": "$35",
+            "type": "Indoor",
+            "height": "1 ft",
+            "potSize": "8 inches",
+            "potType": "Plastic",
+            "description": "The Bird's Nest Fern, or Asplenium nidus, features glossy, wavy fronds that form a rosette shape. It prefers indirect light and a humid environment. Its unique form resembles a bird's nest, adding a touch of greenery to any space."
+          }
+        }
+      ]
+    },
+    {
+      "orderId": "a50d54f1-ff6d-4608-9e19-a24d8484cc06",
+      "userId": "hi",
+      "items": [
+        {
+          "id": "151259b2-3ea5-4513-8861-17b5caf9a34e",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "e92fe97d-ae11-42ec-be65-f08bdd10c9db",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "466b4cb5-4b80-4d4f-92c0-cfe1f84a74f4",
+          "item": {
+            "id": "12",
+            "name": "Zuzu Zanzibar Gem",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331335/zz-plant-gray-pot-removebg-preview_ygik9g.png",
+            "price": "$30",
+            "type": "Indoor",
+            "height": "2 ft",
+            "potSize": "6 inches",
+            "potType": "Ceramic",
+            "description": "The Zuzu Zanzibar Gem, or ZZ Plant, features glossy, dark green leaves that are drought-tolerant and low-maintenance. It thrives in low to bright, indirect light and is perfect for beginners or busy individuals."
+          }
+        },
+        {
+          "id": "b7ef3577-1531-4bc0-83ea-ccb4bdd82c64",
+          "item": {
+            "id": "12",
+            "name": "Zuzu Zanzibar Gem",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331335/zz-plant-gray-pot-removebg-preview_ygik9g.png",
+            "price": "$30",
+            "type": "Indoor",
+            "height": "2 ft",
+            "potSize": "6 inches",
+            "potType": "Ceramic",
+            "description": "The Zuzu Zanzibar Gem, or ZZ Plant, features glossy, dark green leaves that are drought-tolerant and low-maintenance. It thrives in low to bright, indirect light and is perfect for beginners or busy individuals."
+          }
+        }
+      ]
+    },
+    {
+      "orderId": "2ce33189-033b-4c5d-a8f3-532a843d5080",
+      "userId": "1",
+      "items": [
+        {
+          "id": "faf48e84-eb7f-4e9b-b308-9fcbdd2f0e67",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "5cc58ab4-8fa7-4969-8563-e1d9258b4dcf",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "3c46de31-61cb-468b-a23e-c74a3e822dd7",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "ee61be21-6df9-4019-9ca1-612ae3edb5fa",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        }
+      ]
+    },
+    {
+      "orderId": "dd7c4423-a047-4b4e-a59d-0fc27ed516c8",
+      "userId": "1",
+      "items": [
+        {
+          "id": "ba0075f9-a8ad-4345-8d25-4245d8145938",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "8a6133bd-ec53-4d03-99fe-37578ed83d52",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "8ede2112-ce74-4199-b7e1-ff72de2e283b",
+          "item": {
+            "id": "12",
+            "name": "Zuzu Zanzibar Gem",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331335/zz-plant-gray-pot-removebg-preview_ygik9g.png",
+            "price": "$30",
+            "type": "Indoor",
+            "height": "2 ft",
+            "potSize": "6 inches",
+            "potType": "Ceramic",
+            "description": "The Zuzu Zanzibar Gem, or ZZ Plant, features glossy, dark green leaves that are drought-tolerant and low-maintenance. It thrives in low to bright, indirect light and is perfect for beginners or busy individuals."
+          }
+        }
+      ]
+    },
+    {
+      "orderId": "d61b841d-c483-4ed5-88a3-9848d8c3bf11",
+      "userId": "1",
+      "items": [
+        {
+          "id": "eaac9c17-117c-40b1-bee1-83680411bf90",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        }
+      ]
+    },
+    {
+      "orderId": "30c2519f-7fdc-45ca-b0e2-88eebaa4c5c5",
+      "userId": "1",
+      "items": [
+        {
+          "id": "e410bdb8-e5e1-4403-83fc-f1ec84296c4c",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        }
+      ]
+    },
+    {
+      "orderId": "f52da577-603a-4f65-ae49-356bfc062b2d",
+      "userId": "1",
+      "items": [
+        {
+          "id": "e0c24945-67b0-4ec0-953e-a570d03863e5",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        },
+        {
+          "id": "3751db12-a955-4844-be07-89ae460426bb",
+          "item": {
+            "id": "1",
+            "name": "African Mask",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331313/african-mask-plant-white-pot-removebg-preview_duslpl.png",
+            "price": "$45",
+            "type": "Indoor",
+            "height": "3 ft",
+            "potSize": "1 ft",
+            "potType": "Ceramic",
+            "description": "The African Mask Plant, also known as the Alocasia Polly, features striking arrow-shaped leaves with bold, white veins. It thrives in bright, indirect light and requires high humidity. Its dramatic foliage makes it a focal point in any room."
+          }
+        }
+      ]
+    },
+    {
+      "orderId": "bd2c4094-2438-4a0c-8360-8e178418a325",
+      "userId": "1",
+      "items": [
+        {
+          "id": "7ea84fb0-689a-41fc-95d9-61992c4980f6",
+          "item": {
+            "id": "2",
+            "name": "Bird's Nest",
+            "image_url": "https://res.cloudinary.com/dvpkfifkk/image/upload/v1722331314/birds-nest-plant-beige-pot-removebg-preview_v4yqtr.png",
+            "price": "$35",
+            "type": "Indoor",
+            "height": "1 ft",
+            "potSize": "8 inches",
+            "potType": "Plastic",
+            "description": "The Bird's Nest Fern, or Asplenium nidus, features glossy, wavy fronds that form a rosette shape. It prefers indirect light and a humid environment. Its unique form resembles a bird's nest, adding a touch of greenery to any space."
           }
         }
       ]

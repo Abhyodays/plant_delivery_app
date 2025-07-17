@@ -8,7 +8,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { NavParamList } from "../../../constants/NavParamaList";
 import InterText from "../../../components/InterText/InterText";
 import { plantsData } from "../../../constants/PlantData";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Plant } from "../../../types/Plant";
 import { Colors } from "../../../constants/Colors";
 import PlantDetail from "../../../components/PlantDetail/PlantDetail";
@@ -17,7 +17,8 @@ import AddToCartButton from "../../../components/AddToCartButton/AddToCartButton
 import useFetchPlant from "../../../hooks/useFetchPlant";
 import { useDispatch, useSelector } from "react-redux";
 import { removeWishlistPlant, setWishListPlant } from "../../../redux/wishlist/wishlist.actions";
-import { addItemToCart } from "../../../redux/cart/cart.actions";
+import { addItemToCart, removeCartItem } from "../../../redux/cart/cart.actions";
+import { CartItem } from "../../../types/CartItem";
 
 type PlantDetailsProp = {
     route: {
@@ -29,15 +30,25 @@ type response = {
 }
 function ProductDetails({ route }: PlantDetailsProp) {
     const id = route.params.id;
+    const userId = useSelector((state: any) => state.user.user.id)
     const { data: plant }: response = useFetchPlant(`plants/${id}`);
     const dispatch = useDispatch();
     const wishlistPlants: Plant[] = useSelector((state: any) => state.wishlist.plants);
+    const cartItems: CartItem[] = useSelector((state: any) => state.cart.items)
     //dummy
     const [isLiked, setIsLiked] = useState<boolean>(false);
+    const counter = useMemo(() => {
+        return cartItems.filter(({ item }) => item.id === plant?.id).length
+    }, [cartItems, plant])
 
     const addToCart = () => {
         if (!plant) return;
-        dispatch(addItemToCart(plant))
+        dispatch(addItemToCart(userId, plant))
+    }
+    const removeFromCart = () => {
+        const cart = cartItems.filter(({ item }) => item.id === plant?.id);
+        if (cart.length === 0) return;
+        dispatch(removeCartItem(userId, cart[0].id))
     }
     const handleLikeClick = () => {
         if (!plant) return;
@@ -108,7 +119,7 @@ function ProductDetails({ route }: PlantDetailsProp) {
                         color={isLiked ? Colors.green : Colors.medium_grey}
                         onPress={handleLikeClick}
                     />
-                    <AddToCartButton addToCart={() => addToCart()} />
+                    <AddToCartButton count={counter} addToCart={() => addToCart()} removeFromCart={removeFromCart} />
                 </View>
             </View>
         </View>

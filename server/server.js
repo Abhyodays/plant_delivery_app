@@ -2,9 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const { v4: uuid } = require('uuid');
 
 const app = express();
-const port = process.env.PORT || 3000;
+
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -30,8 +32,8 @@ const writeData = (data) => {
 
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
+    console.log("login for user:", email, password)
     const data = readData();
-
     if (!data || !data.users) {
         return res.status(500).json({ message: 'Error reading data' });
     }
@@ -130,6 +132,7 @@ app.get('/cart/:userId', (req, res) => {
 
 app.post('/cart/:userId', (req, res) => {
     const userId = req.params.userId;
+    console.log("userId in cart:", userId)
     const item = req.body;
 
     const data = readData();
@@ -147,9 +150,8 @@ app.post('/cart/:userId', (req, res) => {
         data.cart.push(userCart);
     }
     userCart.items.push(item);
-
     writeData(data);
-    res.status(201).json({ message: 'Item added to cart', item: newItem });
+    res.status(201).json({ message: 'Item added to cart', item });
 });
 
 app.delete('/cart/:userId/:itemId', (req, res) => {
@@ -199,6 +201,57 @@ app.get('/search-plants', (req, res) => {
     res.json(filteredPlants);
 });
 
+app.post("/order", (req, res) => {
+    try {
+        const { userId } = req.body;
+        if (!userId) {
+            return res.status(400).json({ message: 'Missing userId in request body' });
+        }
+
+        const data = readData();
+        if (!data || !Array.isArray(data.cart)) {
+            return res.status(500).json({ message: 'Cart not initialized' });
+        }
+
+        const userCart = data.cart.find(cart => String(cart.userId) === String(userId));
+        console.log("userCart:", userCart, "data.cart:", data.cart)
+        if (!userCart || !Array.isArray(userCart.items) || userCart.items.length === 0) {
+            console.log("cart empty");
+            return res.status(400).json({ message: 'No items in cart' });
+        }
+
+        if (!Array.isArray(data.orders)) {
+            data.orders = [];
+        }
+
+        const newOrder = {
+            orderId: uuid(),
+            userId: userId,
+            items: userCart.items
+        };
+
+        data.orders.push(newOrder);
+        console.log("orders:", data.orders)
+        userCart.items = []; // Clear cart instead of setting null
+        writeData(data);
+        res.status(200).json(newOrder);
+    } catch (err) {
+        console.log("error:", err);
+        res.status(500).json({ message: err.message });
+    }
+});
+
+app.get('/order/:userId', (req, res) => {
+    const userId = req.params.userId;
+    const data = readData();
+    if (data && data.orders) {
+        const allOrders = data.orders.filter(o => o.userId === userId);
+        res.status(200).json({ orders: allOrders });
+        return;
+    } else {
+        res.status(500).json({ message: 'Error reading data' });
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

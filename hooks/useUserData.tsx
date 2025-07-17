@@ -13,7 +13,6 @@ const useUserData = (url: string) => {
 
     async function login(credential: Credential) {
         try {
-            console.log("credential:", credential)
             const response = await fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(credential),
@@ -26,13 +25,12 @@ const useUserData = (url: string) => {
                 throw new Error(errorData.message || "Login Failed");
             }
             const data = await response.json();
-            console.log('DATA in hook:', data)
             setData(data.user)
             setError(null)
             dispatch(saveUser(data.user));
         }
         catch (err) {
-            setError(err instanceof Error ? err.message : "Login Failed");
+            setError("Login Failed");
         }
     }
     async function update(user: User) {

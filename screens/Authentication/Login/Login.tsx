@@ -18,13 +18,12 @@ import useInputValidation from "../../../hooks/useInputValidation";
 function Login() {
     const { data, error, login } = useUserData(`${process.env.BASE_URL}/login`);
     const { values, errors, handleChangeValues, validate } = useInputValidation();
-
-
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
     const goToSignup = () => {
         navigation.push('Signup')
     }
     const handleLogin = async () => {
+        console.log(process.env.BASE_URL)
         const user: Credential = {
             email: values.email,
             password: values.password
@@ -32,9 +31,6 @@ function Login() {
         validate();
         login(user);
     }
-
-
-
 
     return (
         <View style={CommonStyles.container}>
