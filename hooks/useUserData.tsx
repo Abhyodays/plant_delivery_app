@@ -5,11 +5,14 @@ import { useDispatch } from "react-redux";
 import { SAVE_USER_REQUEST } from "../redux/user/user.type";
 import { saveUser } from "../redux/user/user.action";
 import { User } from "../types/User";
+import { useToast } from "../contexts/ToastContext";
+import { ToastType } from "../types";
 
 const useUserData = (url: string) => {
     const [data, setData] = useState<User | null>();
     const [error, setError] = useState<string | null>(null);
     const dispatch = useDispatch();
+    const { showToast } = useToast();
 
     async function login(credential: Credential) {
         try {
@@ -57,7 +60,27 @@ const useUserData = (url: string) => {
         }
     }
 
-    return { data, error, login, update }
+    async function signup(credential: Credential) {
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(credential),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            if (!response.ok) {
+                const errorData = await response.json();
+                const error = errorData.message || "Signup failed";
+                showToast(error, ToastType.ERROR)
+            }
+            const data = await response.json();
+            showToast("Signup successfully", ToastType.SUCCESS)
+        } catch (err) {
+            showToast("Something went wrong", ToastType.ERROR)
+        }
+    }
+    return { data, error, login, update, signup }
 }
 
 export default useUserData;

@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import useInputValidation from "../../../hooks/useInputValidation";
 import styles from "./styles";
 import { useEffect, useState } from "react";
-
+import useUserData from "../../../hooks/useUserData";
 
 function Signup() {
     const navigation = useNavigation<StackNavigationProp<NavParamList>>();
@@ -19,11 +19,23 @@ function Signup() {
     const [confirmPassword, setConfirmPassword] = useState<string>("");
     const [confirmPasswordError, setConfirmPasswordError] = useState<string>("")
 
+    const { signup } = useUserData(`${process.env.BASE_URL}/signup`);
+
     const goToLogin = () => {
         navigation.navigate('Login')
     }
-    const handleSignup = () => {
-        validate();
+    const handleSignup = async () => {
+        // if (!validate()) {
+        //     console.log("validation failed");
+        //     return;
+        // }
+        try {
+            const res = await signup({ email: values['email'], password: values['password'] });
+            navigation.navigate('Login');
+        } catch (err) {
+            console.log({ error: err })
+        }
+
     }
     const handleConfirmPassword = (text: string) => {
         setConfirmPassword(text);

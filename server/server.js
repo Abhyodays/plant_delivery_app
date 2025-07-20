@@ -11,6 +11,9 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+const { login, signup } = require('./helpers');
+
+
 const dbPath = path.join(__dirname, 'db.json');
 const readData = () => {
     try {
@@ -30,26 +33,46 @@ const writeData = (data) => {
     }
 };
 
-app.post('/login', (req, res) => {
+app.post('/signup', async (req, res) => {
     const { email, password } = req.body;
-    console.log("login for user:", email, password)
-    const data = readData();
-    if (!data || !data.users) {
-        return res.status(500).json({ message: 'Error reading data' });
-    }
-    const user = data.users.find(user => user.email === email.trim().toLowerCase() && user.password === password.trim());
-    console.log(user)
-    if (user) {
-        const userWithoutPassword = {
-            name: user.name,
-            email: user.email,
-            id: user.id
+    try {
+        const user = await signup(email, password);
+        if (user) {
+            return res.status(200).json({ message: 'User created successfully' });
+        } else {
+            return res.status(400).json({ message: 'Something went wrong' });
         }
-        res.json({ message: 'Login successful', user: userWithoutPassword });
-    } else {
-        res.status(401).json({ message: 'Invalid email or password' });
+
+    } catch (err) {
+        console.log("error:", err);
+        return res.status(500).json({ error: err });
+    }
+})
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const user = await login(email, password);
+        console.log({ user });
+
+        if (user) {
+            const userWithoutPassword = {
+                name: user.displayName,
+                email: user.email,
+                id: user.uid
+            };
+
+            return res.status(200).json({ message: 'Login successful', user: userWithoutPassword });
+        } else {
+            return res.status(401).json({ message: 'Invalid email or password' });
+        }
+
+    } catch (err) {
+        console.log("error:", err);
+        return res.status(500).json({ error: err });
     }
 });
+
 
 app.put('/users/:id', (req, res) => {
     const userId = req.params.id;
