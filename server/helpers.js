@@ -1,4 +1,4 @@
-const { signInWithEmailAndPassword, createUserWithEmailAndPassword } = require("firebase/auth");
+const { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, updateProfile } = require("firebase/auth");
 const { auth } = require("./firebase"); // Import initialized auth
 
 function login(email, password) {
@@ -32,4 +32,20 @@ function signup(email, password) {
     })
 }
 
-module.exports = { login, signup };
+function logout() {
+    return new Promise((res, rej) => {
+        signOut().then(() => res("Logout successfully")).catch(() => rej("Logout failed"))
+    })
+}
+
+function updateUser(auth, name) {
+    const user = auth.currentUser;
+    return new Promise((res, rej) => {
+        updateProfile(user, {
+            displayName: name
+        }).then(() => res("User updated successfully."))
+            .catch((err) => rej(err));
+    })
+}
+
+module.exports = { login, signup, logout, updateUser };

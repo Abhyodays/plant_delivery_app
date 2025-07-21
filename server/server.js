@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const { login, signup } = require('./helpers');
+const { login, signup, logout, updateUser } = require('./helpers');
 
 
 const dbPath = path.join(__dirname, 'db.json');
@@ -73,30 +73,46 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.post('/logout', async (req, res) => {
+    try {
+        const response = await logout();
+        res.status(200).json({ message: response })
+    } catch (err) {
+        res.status(500).json({ message: err })
+    }
+})
 
-app.put('/users/:id', (req, res) => {
-    const userId = req.params.id;
-    const { name, email } = req.body;
 
-    const data = readData();
-    if (!data || !data.users) {
-        return res.status(500).json({ message: 'Error reading data' });
+app.put('/users/:id', async (req, res) => {
+    const { name } = req.body;
+    console.log("update user")
+    try {
+        const res = await updateUser(name);
+        res.status(200).json({ message: res });
+    } catch (err) {
+        res.status(500).json({ message: "Something went wrong" })
     }
 
-    const userIndex = data.users.findIndex(user => user.id === userId);
-    if (userIndex === -1) {
-        return res.status(404).json({ message: 'User not found' });
-    }
 
-    if (name) {
-        data.users[userIndex].name = name;
-    }
-    if (email) {
-        data.users[userIndex].email = email.trim().toLowerCase();
-    }
+    // const data = readData();
+    // if (!data || !data.users) {
+    //     return res.status(500).json({ message: 'Error reading data' });
+    // }
 
-    writeData(data);
-    res.json({ message: 'User updated successfully', user: data.users[userIndex] });
+    // const userIndex = data.users.findIndex(user => user.id === userId);
+    // if (userIndex === -1) {
+    //     return res.status(404).json({ message: 'User not found' });
+    // }
+
+    // if (name) {
+    //     data.users[userIndex].name = name;
+    // }
+    // if (email) {
+    //     data.users[userIndex].email = email.trim().toLowerCase();
+    // }
+
+    // writeData(data);
+    // res.json({ message: 'User updated successfully', user: data.users[userIndex] });
 });
 app.get('/plants', (req, res) => {
     const data = readData();
